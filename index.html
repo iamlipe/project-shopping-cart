@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/scroll.css">
+    <script src="./script/api-request.js"></script>
+  </head>
+
+  <body>
+
+    <header>
+      <h1>shopping <span>cart</span></h1>
+      <div class="search" id="search">
+        <label class="search-box" for="search">
+          <input class="search-input" id="search-input" type="text" placeholder="search" name="search">
+          <img class="search-image" id="search-image" src="./src/search-solid.svg">  
+        </label>
+        <img class="bag-image" id="bag" src="./src/1492532808-5-shopping-bag_83223.svg">
+      </div>
+    </header>
+
+    <section class="box-items">
+      <h1 class="title-product">produtos</h1>
+      <div class="filter-select-box">
+        <label>
+          <select class="filter-select" onchange="getQueryOrder(this.value)">
+            <option class="filter-select-option" value="relevance" selected>mais relevante</option>
+            <option class="filter-select-option" value="price_asc">crescente</option>
+            <option class="filter-select-option" value="price_desc">decrescente</option>
+          </select>
+        </label>
+      </div>
+      <div class="items" id="items">
+        <div class="bt-spinner" id="loading"></div>
+      </div>
+    </section>
+
+    <section class="bag-modal closed" id="modal">
+      <div class="cart">
+        <img class="close-cart-button" id="close-cart-button" src="./src/487517051553239370.svg">
+        <span class="cart__title">Carrinho de compras</span>
+        <hr>
+        <ol class="cart__items" id="cart__items"></ol>
+        <hr>
+        <div class="total">
+          <p>TOTAL:</p>
+          <p class="total-price" id="totalPayment"></p>
+        </div>
+        <div class="buttons">
+          <button class="empty-cart" id="empty-cart">Esvaziar carrinho</button>
+          <button class="finish-button" id="empty-cart">Finalizar</button>
+        </div>
+      </div>
+    </section>
+
+    <script src="./script/script.js"></script>
+  </body>
+</html>
